@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   //Here my function will ask user for characters lenght in a prompt.  Also checking if input was a number:
@@ -19,6 +19,12 @@ function writePassword() {
   var includeUppercase = confirm("Would you like UPPERCASE letters?");
   var includeNumbers = confirm("Would you like numbers?");
   var includeSpecialChars = confirm("Would you like special characters?");
+
+  //Here my function defines the character sets, and stores them in as variables:
+  var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numberChars = "0123456789";
+  var specialChars = "!@#$%^&*";
 
   passwordText.value = password;
 
