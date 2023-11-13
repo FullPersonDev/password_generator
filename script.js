@@ -12,8 +12,12 @@ function writePassword() {
   function generatePassword() {
     //Here my function will ask user for characters lenght in a prompt.  Also checking if input was a number:
     var passLenght = parseInt(prompt("How many characters would you like for your password?"))
-    if (isNaN(passLenght) || passLenght <= 0) {
-      alert("Please enter a valid number and greater than 0")
+    if (isNaN(passLenght) || passLenght < 8) {
+      alert("Please enter a valid number equal or greater than 8")
+      return;
+    }
+    if (isNaN(passLenght) || passLenght > 128) {
+      alert("Please enter a valid number equal or less than 128")
       return;
     }
 
