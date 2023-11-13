@@ -22,6 +22,7 @@ function writePassword() {
     }
 
     //Here my function will ask user 3 questions in a confirm, and store them as variables:
+    var includeLowercase = confirm("would you like lowercase letters?")
     var includeUppercase = confirm("Would you like UPPERCASE letters?");
     var includeNumbers = confirm("Would you like numbers?");
     var includeSpecialChars = confirm("Would you like special characters?");
@@ -33,7 +34,8 @@ function writePassword() {
     var specialChars = "!@#$%^&*";
 
     //Here my function will combine the character sets based on user preference:
-    var allChars = lowercaseChars;
+    var allChars = "";
+    if (includeLowercase) {allChars += lowercaseChars};
     if (includeUppercase) {allChars += uppercaseChars};
     if (includeNumbers) {allChars += numberChars};
     if (includeSpecialChars) {allChars += specialChars};
