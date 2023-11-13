@@ -32,9 +32,19 @@ function writePassword() {
     var allChars = lowercaseChars;
     if (includeUppercase) {allChars += uppercaseChars};
     if (includeNumbers) {allChars += numberChars};
-    if (specialChars) {allChars += specialChars};
+    if (includeSpecialChars) {allChars += specialChars};
+
+    //Here my function will generate the random password with help from this for loop, and return the password:
+    var password = "";
+    for (var i = 0; i < passLenght; i++) {
+      var randomIndex = Math.floor(Math.random() * allChars.length);
+      password += allChars.charAt(randomIndex);
+    }
+
+    return password;
   }
 
+  //Here the generated password will be displayed in the text area:
   passwordText.value = password;
 }
 
